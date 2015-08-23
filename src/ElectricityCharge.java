@@ -9,6 +9,9 @@
  * @author arnav
  */
 
+import java.awt.image.BufferedImage;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -388,6 +391,12 @@ public class ElectricityCharge extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private BufferedImage createPanelImage() {
+        BufferedImage image = new BufferedImage(
+            this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        this.paint(image.getGraphics());
+        return image;
+    }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         collection enterColl=new collection();
@@ -415,6 +424,25 @@ public class ElectricityCharge extends javax.swing.JFrame {
         }     
         Home home =new Home();
         home.setVisible(true);
+       
+        //code to print gui
+        final BufferedImage image = createPanelImage();
+
+        PrinterJob printJob = PrinterJob.getPrinterJob();
+        printJob.setPrintable(new ImagePrintable(printJob, image));
+        System.out.print("print");
+        if (printJob.printDialog()) {
+            
+        try {
+            
+           // System.out.print("print");
+            printJob.print();
+           // System.out.print("print");
+        } catch (PrinterException prt) {
+            prt.printStackTrace();
+            }
+        }
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

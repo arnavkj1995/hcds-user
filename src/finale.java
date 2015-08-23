@@ -1574,9 +1574,9 @@ public class finale extends javax.swing.JFrame {
             
         try {
             
-            System.out.print("print");
+            //System.out.print("print");
             printJob.print();
-            System.out.print("print");
+            //System.out.print("print");
         } catch (PrinterException prt) {
             prt.printStackTrace();
             }

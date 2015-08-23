@@ -1,4 +1,7 @@
 
+import java.awt.image.BufferedImage;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -30,7 +33,15 @@ public class LandRent extends javax.swing.JFrame {
     double rent=0;
     int lr_interest=0;
        DecimalFormat numberFormat=  new DecimalFormat("#.00");
-       
+     
+    
+    private BufferedImage createPanelImage() {
+        BufferedImage image = new BufferedImage(
+            this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        this.paint(image.getGraphics());
+        return image;
+    }
+    
     public void setValues(String name, double pa, double values[], String arrearDues){
         jTextField1.setText(name);
         TCPClient clnt=new TCPClient();
@@ -398,6 +409,22 @@ public class LandRent extends javax.swing.JFrame {
             Logger.getLogger(LandRent.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(LandRent.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        final BufferedImage image = createPanelImage();
+
+        PrinterJob printJob = PrinterJob.getPrinterJob();
+        printJob.setPrintable(new ImagePrintable(printJob, image));
+        System.out.print("print");
+        if (printJob.printDialog()) {
+            
+        try {
+            
+         //   System.out.print("print");
+            printJob.print();
+         //   System.out.print("print");
+        } catch (PrinterException prt) {
+            prt.printStackTrace();
+            }
         }
            
     }//GEN-LAST:event_jButton2ActionPerformed

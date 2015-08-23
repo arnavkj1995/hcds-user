@@ -1,4 +1,7 @@
 
+import java.awt.image.BufferedImage;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -344,6 +347,12 @@ public class WaterCharge extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private BufferedImage createPanelImage() {
+        BufferedImage image = new BufferedImage(
+            this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        this.paint(image.getGraphics());
+        return image;
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         collection enterColl=new collection();
@@ -375,6 +384,24 @@ public class WaterCharge extends javax.swing.JFrame {
         home.setVisible(true);
         String periodMonth=(String)jComboBox1.getSelectedItem();
         String periodYear=(String)jComboBox2.getSelectedItem();
+        
+        //code top print the gui
+        final BufferedImage image = createPanelImage();
+
+        PrinterJob printJob = PrinterJob.getPrinterJob();
+        printJob.setPrintable(new ImagePrintable(printJob, image));
+        System.out.print("print");
+        if (printJob.printDialog()) {
+            
+        try {
+            
+            System.out.print("print");
+            printJob.print();
+            System.out.print("print");
+        } catch (PrinterException prt) {
+            prt.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
