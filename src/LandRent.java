@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
@@ -25,6 +26,7 @@ public class LandRent extends javax.swing.JFrame {
      * Creates new form LandRent
      */
     public LandRent() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
     double totalRent=0;

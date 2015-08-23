@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import com.example.tutorial.Test.test;
 import com.example.tutorial.AddressBookProtos.Person;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +23,7 @@ public class FrameTwo extends javax.swing.JFrame {
      * Creates new form FrameTwo
      */
     public FrameTwo() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
 
@@ -221,7 +223,6 @@ public class FrameTwo extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String feeType = jList1.getSelectedValue().toString();
-        FrameThree thr = new FrameThree();
         LandRent landRent = new LandRent();
         float charges[] = new float[10];
         if(feeType.equals("Arrear Dues")){

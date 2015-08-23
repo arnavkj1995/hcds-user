@@ -8,6 +8,7 @@
  *
  * @author arnav
  */
+import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +20,7 @@ public class ChangePassword extends javax.swing.JFrame {
      * Creates new form ChangePassword
      */
     public ChangePassword() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
 

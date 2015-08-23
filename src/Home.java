@@ -1,3 +1,6 @@
+
+import java.awt.Color;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +17,7 @@ public class Home extends javax.swing.JFrame {
      * Creates new form Home
      */
     public Home() {
+        this.getContentPane().setBackground(Color.white);
         initComponents();
     }
 

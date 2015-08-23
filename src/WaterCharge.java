@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
@@ -24,6 +25,7 @@ public class WaterCharge extends javax.swing.JFrame {
      * Creates new form WaterCharge
      */
     public WaterCharge() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
     

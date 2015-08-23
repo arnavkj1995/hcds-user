@@ -9,6 +9,7 @@
  * @author arnav
  */
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
@@ -23,6 +24,7 @@ public class ElectricityCharge extends javax.swing.JFrame {
      * Creates new form ElectricityCharge
      */
     public ElectricityCharge() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
 

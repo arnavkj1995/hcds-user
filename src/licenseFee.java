@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
@@ -22,6 +23,7 @@ public class licenseFee extends javax.swing.JFrame {
      * Creates new form licenseFee
      */
     public licenseFee() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
     double rent=0;

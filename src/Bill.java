@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -29,6 +30,7 @@ public class Bill extends javax.swing.JFrame {
      * Creates new form Bill
      */
     public Bill(){
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
     

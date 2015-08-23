@@ -8,6 +8,7 @@
  *
  * @author arnav
  */
+import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Graphics;
@@ -29,6 +30,7 @@ public class finale extends javax.swing.JFrame {
      * Creates new form finale
      */
     public finale() {
+        this.getContentPane().setBackground(Color.white);
         initComponents();
     }
     int check=0;

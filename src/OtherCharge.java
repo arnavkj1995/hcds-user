@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.DefaultComboBoxModel;
@@ -17,6 +18,7 @@ public class OtherCharge extends javax.swing.JFrame {
      * Creates new form OtherCharge
      */
     public OtherCharge() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
     

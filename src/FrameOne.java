@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +23,7 @@ public class FrameOne extends javax.swing.JFrame {
 
     
     public FrameOne() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
 

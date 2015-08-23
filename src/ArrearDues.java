@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +21,7 @@ public class ArrearDues extends javax.swing.JFrame {
      * Creates new form ArrearDues
      */
     public ArrearDues() {
+         this.getContentPane().setBackground(Color.white);
         initComponents();
     }
     
